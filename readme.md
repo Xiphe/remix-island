@@ -136,10 +136,10 @@ npm i remix-island
 
 #### 4. Value 💰
 
-## Pitfalls/Notes
+## pitfalls/notes
 
 #### Order of elements in head might change
 
-The remix-managed <Head /> which includes all the stuff from `MetaFunction` and `LinksFunction` will move to the end of `<head />` once the client is hydrated. If you combine this with other libraries that inject elements into the head (like `styled-components`) this might lead to unexpected behaviour.
+The remix-managed `<Head />` which includes all the stuff from `MetaFunction` and `LinksFunction` will move to the end of `<head />` once the client is hydrated. If you combine this with other libraries that inject elements into the head (like `styled-components`) this might lead to unexpected behaviour.
 
 For me it works quite well to move everything global out of `root.tsx` and put it before `${head}` in `entry.server.ts`
