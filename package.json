@@ -1,0 +1,53 @@
+{
+  "name": "remix-island",
+  "version": "0.0.0-development",
+  "description": "utils to render remix into a dom-node instead of the whole document",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "rm -rf dist && npm run build",
+    "build": "npm run build:declarations && npm run build:esm && npm run build:cjs",
+    "build:declarations": "tsc",
+    "build:esm": "esbuild src/index.ts --outfile=dist/index.mjs --format=esm --target=es2020 --sourcemap --minify",
+    "build:cjs": "esbuild src/index.ts --outfile=dist/index.cjs --format=cjs --target=es2016 --sourcemap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Xiphe/remix-island.git"
+  },
+  "keywords": [
+    "remix",
+    "react",
+    "island",
+    "hydration"
+  ],
+  "author": "Hannes Diercks <node@xiphe.net> (https://xiphe.net/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Xiphe/remix-island/issues"
+  },
+  "homepage": "https://github.com/Xiphe/remix-island#readme",
+  "peerDependencies": {
+    "react": ">= 16.8",
+    "react-dom": ">= 16.8",
+    "@remix-run/server-runtime": ">= 1"
+  },
+  "devDependencies": {
+    "@remix-run/server-runtime": "1.12.0",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "esbuild": "0.17.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "4.9.5"
+  }
+}
