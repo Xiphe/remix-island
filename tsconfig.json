@@ -3,6 +3,7 @@
     "strict": true,
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "target": "ES2019",
+    "skipLibCheck": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "outDir": "dist",
