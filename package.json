@@ -37,17 +37,19 @@
   },
   "homepage": "https://github.com/Xiphe/remix-island#readme",
   "peerDependencies": {
+    "@remix-run/react": ">= 1",
+    "@remix-run/server-runtime": ">= 1",
     "react": ">= 16.8",
-    "react-dom": ">= 16.8",
-    "@remix-run/server-runtime": ">= 1"
+    "react-dom": ">= 16.8"
   },
   "devDependencies": {
+    "@remix-run/react": "1.12.0",
     "@remix-run/server-runtime": "1.12.0",
-    "@types/react": "18.0.27",
-    "@types/react-dom": "18.0.10",
+    "@types/react": "16.8.25",
+    "@types/react-dom": "16.8.5",
     "esbuild": "0.17.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
     "typescript": "4.9.5"
   }
 }
