@@ -60,7 +60,6 @@ export function renderHeadToString({
 }: RenderHeadToStringOpts) {
   const head = renderToString(
     createElement(RemixServer, {
-      // @ts-expect-error no idea why ts complains here... ¯\_(ツ)_/¯
       context: switchRootComponent(remixContext, Head),
       url: request.url,
     }),
