@@ -87,7 +87,7 @@ npm i remix-island
                status: didError ? 500 : responseStatusCode,
              }),
            );
--
+
 +          body.write(
 +            `<!DOCTYPE html><html><head>${head}</head><body><div id="root">`,
 +          );
