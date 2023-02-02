@@ -1,6 +1,6 @@
 {
   "name": "remix-island",
-  "version": "0.0.0-development",
+  "version": "0.0.1",
   "description": "utils to render remix into a dom-node instead of the whole document",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
