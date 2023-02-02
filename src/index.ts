@@ -30,7 +30,7 @@ export function createHead(Comp: ComponentType): HeadComponent {
 export function switchRootComponent(
   remixContext: EntryContext,
   Head: HeadComponent,
-) {
+): EntryContext {
   return {
     ...remixContext,
     routeModules: {
