@@ -33,3 +33,14 @@ export default function App() {
     </>
   );
 }
+
+export function CatchBoundary() {
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <h1>This is a catch boundary!</h1>
+      <p>
+        <a href="/">Go back home</a>
+      </p>
+    </div>
+  );
+}
