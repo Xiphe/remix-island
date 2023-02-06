@@ -72,8 +72,21 @@ export function switchRootComponent(
   remixContext: EntryContext,
   Head: HeadComponent,
 ): EntryContext {
+  let serverHandoffString = remixContext.serverHandoffString;
+  if (serverHandoffString) {
+    const serverHandoff = JSON.parse(serverHandoffString);
+    // remove errors from JSON string
+    delete serverHandoff.state.errors;
+    serverHandoffString = JSON.stringify(serverHandoff);
+  }
+
   return {
     ...remixContext,
+    serverHandoffString,
+    staticHandlerContext: {
+      ...remixContext.staticHandlerContext,
+      errors: null, // remove errors from context
+    },
     routeModules: {
       ...remixContext.routeModules,
       root: {
