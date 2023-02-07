@@ -76,7 +76,7 @@ export function switchRootComponent(
   if (serverHandoffString) {
     const serverHandoff = JSON.parse(serverHandoffString);
     // remove errors from JSON string
-    delete serverHandoff.state.errors;
+    delete serverHandoff?.state?.errors;
     serverHandoffString = JSON.stringify(serverHandoff);
   }
 
