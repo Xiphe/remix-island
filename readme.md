@@ -1,5 +1,11 @@
 # remix-island
 
+🚨 this package is a workaround to allow usage of remix with `react@(18.0 - 18.2)` which comes with a lot of hydration problems. I'll probably not maintain this for long after react@18.3 hopefully fixes this.
+
+ref https://github.com/remix-run/remix/issues/5463, https://github.com/remix-run/remix/issues/5144, https://github.com/remix-run/remix/issues/4822, https://github.com/remix-run/remix/discussions/5244, https://github.com/facebook/react/issues/24430
+
+---
+
 utils to render remix into a dom-node (like `<div id="root"></div>`) instead of the whole `document`
 
 This approach was pioneered by [@kiliman](https://github.com/kiliman) in [kiliman/remix-hydration-fix](https://github.com/kiliman/remix-hydration-fix) 🙏👍🎉
