@@ -138,8 +138,19 @@ npm i remix-island
 
 ## pitfalls/notes
 
+#### TL;DR:
+
+Everything that does not need to be managed by remix should be placed before `${head}` in `entry.server.tsx`.
+
 #### Order of elements in head might change
 
 The remix-managed `<Head />` which includes all the stuff from `MetaFunction` and `LinksFunction` will move to the end of `<head />` once the client is hydrated. If you combine this with other libraries that inject elements into the head (like `styled-components`) this might lead to unexpected behaviour.
+Move all global styles out of remix into the static `<head />` to minimize impact of this.
 
-For me it works quite well to move everything global out of `root.tsx` and put it before `${head}` in `entry.server.ts`
+#### Scripts might run twice
+
+Due to how this "hack" is working, if you have other bootstrap scripts (for example [raygun](https://github.com/Xiphe/remix-island/issues/4)). These might run twice. Move them out of remix into the static `<head />` to prevent this.
+
+#### Flash of unstyled content
+
+Some users of this notice a flash of unstyled content when remix manages some of the CSS. We found that [most of the time this only happens in development](https://github.com/Xiphe/remix-island/issues/2) with browser cache disabled. When you observe something like this in production with cache enabled try moving all global styles out of remix into the static `<head />`.
