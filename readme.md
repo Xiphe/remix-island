@@ -160,3 +160,8 @@ Due to how this "hack" is working, if you have other bootstrap scripts (for exam
 #### Flash of unstyled content
 
 Some users of this notice a flash of unstyled content when remix manages some of the CSS. We found that [most of the time this only happens in development](https://github.com/Xiphe/remix-island/issues/2) with browser cache disabled. When you observe something like this in production with cache enabled try moving all global styles out of remix into the static `<head />`.
+
+#### Usage with Stitches
+
+@louisremi found out that for stitches it's required to [render the `<Head />` after the rest of the document (#11)](https://github.com/Xiphe/remix-island/issues/11)
+
