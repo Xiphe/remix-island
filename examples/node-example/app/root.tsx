@@ -1,4 +1,4 @@
-import type { MetaFunction } from '@remix-run/node';
+import type { V2_MetaFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -9,11 +9,7 @@ import {
 } from '@remix-run/react';
 import { createHead } from 'remix-island';
 
-export const meta: MetaFunction = () => ({
-  charset: 'utf-8',
-  title: 'New Remix App',
-  viewport: 'width=device-width,initial-scale=1',
-});
+export const meta: V2_MetaFunction = () => [{ title: 'New Remix App' }];
 
 export const Head = createHead(() => (
   <>

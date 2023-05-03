@@ -8,6 +8,10 @@ import { Head } from './root';
 import { renderHeadToString } from 'remix-island';
 
 const ABORT_DELAY = 5000;
+const COMMON_HEAD = `
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+`;
 
 export default function handleRequest(
   request: Request,
@@ -55,7 +59,7 @@ function handleBotRequest(
             }),
           );
           body.write(
-            `<!DOCTYPE html><html><head>${head}</head><body><div id="root">`,
+            `<!DOCTYPE html><html><head>${COMMON_HEAD}${head}</head><body><div id="root">`,
           );
           pipe(body);
           body.write(`</div></body></html>`);
@@ -101,7 +105,7 @@ function handleBrowserRequest(
           );
 
           body.write(
-            `<!DOCTYPE html><html><head>${head}</head><body><div id="root">`,
+            `<!DOCTYPE html><html><head>${COMMON_HEAD}${head}</head><body><div id="root">`,
           );
           pipe(body);
           body.write(`</div></body></html>`);

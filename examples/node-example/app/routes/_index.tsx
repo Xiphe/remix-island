@@ -9,6 +9,9 @@ export default function Index() {
           <Link to="/nowhere">This is a 404 link</Link>
         </li>
         <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
           <a
             target="_blank"
             href="https://remix.run/tutorials/blog"
