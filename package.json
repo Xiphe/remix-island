@@ -43,13 +43,13 @@
     "react-dom": ">= 16.8"
   },
   "devDependencies": {
-    "@remix-run/react": "1.12.0",
-    "@remix-run/server-runtime": "1.12.0",
-    "@types/react": "18.0.27",
-    "@types/react-dom": "18.0.10",
-    "esbuild": "0.17.5",
+    "@remix-run/react": "^2.8.0",
+    "@remix-run/server-runtime": "^2.8.0",
+    "@types/react": "^18.2.63",
+    "@types/react-dom": "^18.2.20",
+    "esbuild": "^0.20.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "4.9.5"
+    "typescript": "^5.3.3"
   }
 }

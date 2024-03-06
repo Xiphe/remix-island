@@ -80,6 +80,9 @@ export function switchRootComponent(
     serverHandoffString = JSON.stringify(serverHandoff);
   }
 
+  const { Layout, ...rootModuleWithoutLayout } =
+    remixContext.routeModules.root!;
+
   return {
     ...remixContext,
     serverHandoffString,
@@ -90,7 +93,7 @@ export function switchRootComponent(
     routeModules: {
       ...remixContext.routeModules,
       root: {
-        ...remixContext.routeModules.root,
+        ...rootModuleWithoutLayout,
         default: () =>
           createElement(Head, { __remix_island_render_server: true }),
       },
